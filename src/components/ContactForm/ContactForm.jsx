@@ -5,10 +5,10 @@ import styles from '../ContactForm/ContactForm.module.css';
 
 export function ContactForm() {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.items); // ✅ FIXED
+  const contacts = useSelector(state => state.contacts.items);
 
   useEffect(() => {
-    dispatch(fetchContacts()); // ✅ Fetch contacts on mount
+    dispatch(fetchContacts()); // Fetch contacts on mount
   }, [dispatch]);
 
   const handleSubmit = e => {
@@ -29,7 +29,7 @@ export function ContactForm() {
       return;
     }
 
-    dispatch(addContact({ name, number })); // ✅ Removed manual ID
+    dispatch(addContact({ name, number }));
 
     e.target.reset();
   };

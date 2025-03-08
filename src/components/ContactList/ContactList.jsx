@@ -5,20 +5,20 @@ import styles from '../ContactList/ContactList.module.css';
 
 export function ContactList() {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.items); // ✅ FIXED
+  const contacts = useSelector(state => state.contacts.items);
   const filter = useSelector(state => state.filter);
 
-  // ✅ Fetch contacts when the component mounts
+  // Fetch contacts when the component mounts
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  // ✅ Filter contacts based on search input
+  // Filter contacts based on search input
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
-  // ✅ Show a message if no contacts are found
+  // Show a message if no contacts are found
   if (filteredContacts.length === 0) {
     return <p className={styles.noContacts}>No contacts found.</p>;
   }

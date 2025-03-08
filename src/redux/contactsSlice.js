@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// 🌐 API BASE URL (Replace with your own)
+// API BASE URL (Replace with your own)
 const API_URL = 'https://67cbf14f3395520e6af6b2a7.mockapi.io/contacts';
 
-// 🔹 Async Thunks
+// Async Thunks
 
 // Fetch Contacts
 export const fetchContacts = createAsyncThunk(
@@ -45,14 +45,14 @@ export const deleteContact = createAsyncThunk(
   }
 );
 
-// 🔹 Initial Redux State
+// Initial Redux State
 const initialState = {
   items: [],
   isLoading: false,
   error: null,
 };
 
-// 🔹 Contacts Slice
+// Contacts Slice
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
